@@ -1,0 +1,29 @@
+version: '2.1'
+services:
+
+  hit-base-tool-account-db:
+        build: ./common/hit-base-account-db
+        image: hit-base-tool-account-db
+        container_name: hit-base-tool-account-db
+        env_file:
+            - ./hit-base-tool-account-db/config.env
+        healthcheck:
+            test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+            timeout: 20s
+            retries: 10
+        volumes:
+            - ../data/hit-base-tool-account-db/logs/:/var/log/mysql/
+            - ../data/hit-base-tool-account-db/data/:/var/lib/mysql/
+
+  hit-base-tool-proxy:
+      build: ./hit-base-tool-proxy
+      image: hit-base-tool-proxy
+      container_name: hit-base-tool-proxy
+      volumes:
+          - ../data/hit-base-tool-proxy/logs/:/var/log/nginx/
+#          - ../data/hit-base-tool-proxy/html/:/var/www/html/
+#          - ../data/hit-base-tool-proxy/docs/:/var/www/docs/
+
+      ports:
+          - "80:80"
+          - "443:443"

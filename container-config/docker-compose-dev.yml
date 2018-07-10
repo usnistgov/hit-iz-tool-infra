@@ -1,0 +1,48 @@
+version: '2.1'
+services:
+
+  hit-base-tool-db:
+      build: ./common/hit-base-db
+      image: hit-base-tool-db
+      container_name: hit-base-tool-db
+      env_file:
+          - ./hit-base-tool/db/config.env
+      volumes:
+          - ../data/hit-base-tool/db/logs/:/var/log/mysql/
+          - ../data/hit-base-tool/db/data/:/var/lib/mysql/
+      healthcheck:
+          test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+          timeout: 20s
+          retries: 10
+
+  hit-base-tool:
+      build: ./hit-base-tool/app
+      image: hit-base-tool
+      container_name: hit-base-tool
+      env_file:
+          - ./hit-base-tool/db/config.env
+          - ./hit-base-tool/app/config/config.env
+      volumes:
+          - ../data/hit-base-tool/app/logs/config:/opt/data/config/
+          - ../data/hit-base-tool/app/logs/tomcat:/opt/tomcat/logs/
+          - ../data/hit-base-tool/app/logs/app:/opt/data/logs/
+
+      depends_on:
+          hit-base-tool-account-db:
+            condition: service_healthy
+          hit-base-tool-db:
+            condition: service_healthy
+      links:
+          - hit-base-tool-account-db:hit-base-tool-account-db
+          - hit-base-tool-db:hit-base-tool-db
+      healthcheck:
+          test: [ "CMD", "curl", "-I", "-f", "http://localhost:8080/hit-base-tool/" ]
+          timeout: 60s
+          retries: 10
+
+  hit-base-tool-proxy:
+     depends_on:
+          hit-base-tool:
+            condition: service_healthy
+     links:
+          - hit-base-tool:hit-base-tool

@@ -1,0 +1,14 @@
+version: '2.1'
+services:
+  update-accounts:
+      build: ./update-accounts
+      image: update-accounts
+      container_name: update-accounts
+      env_file:
+          - ./erx-account-db/config.env
+      external_links:
+          - erx-account-db
+      healthcheck:
+          test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+          timeout: 20s
+          retries: 10
