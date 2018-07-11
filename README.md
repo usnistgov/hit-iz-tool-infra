@@ -49,4 +49,42 @@ Replace 'localhost' by your hostname in ./hit-base-tool-proxy/Dockerfile
 2) `./update-accounts.sh` 
  
  
+###  Where to find the data ?
+All data are mounted to host which means they are accessible from your host under the data folder 
+1) hit-base-tool logs 
+./data/hit-base-tool/db/data/ 
+
+2) hit-base-tool-account-db logs 
+./data/hit-base-tool-account-db/data/ 
+
+
+###  Where to find the logs ? 
+All the logs are mounted to your host.  The logs are available under: 
+1) hit-base-tool logs 
+./data/hit-base-tool/app/logs/app/
+./data/hit-base-tool/app/logs/tomcat/
+./data/hit-base-tool/db/logs/ 
+
+2) hit-base-tool-account-db logs 
+./data/hit-base-tool-account-db/logs/ 
+
+3) hit-base-tool-proxy logs 
+./data/hit-base-tool-proxy/logs/ 
+
+
+###  How to change the logs properties? 
+To change the logs properties edit the log4j ./data/hit-base-tool/app/logs/config/app-log4j.properties 
+
+
+###  How to test with a different version of the war file 
+To use a local war file
+1) Open the ./container-config/hit-base-tool/app/Dockerfile and comment line 5 and uncomment line 6. Make sure the name of the new war file is 'hit-base-tool.war' 
+
+2) Delete the previous war file data.  All test cases will be deleted and replaced by the new data of the new war file
+`rm -r ./data/hit-base-tool/db/` 
+
+3) Deploy  
+`./container-config/deploy.sh`
+
+
 
