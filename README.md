@@ -1,8 +1,14 @@
-### hl7-iz-cdc-deploy
+### hit-base-tool-deploy
 This repository is to deploy the hit-base-tool located at https://github.com/haffo/hit-base-tool/. The deployment script handles the deployment of the following tools: 
 -  iztool-cni: Immunization tool for CNI
 branch: iztool-cni  
-- iztool:  Immunization tool for NIST
+- iztool:  Immunization tool for NIST 
+
+
+#### Pre-requirements 
+- docker: Instructions to install docker can be found at https://www.docker.com/docker-community
+- docker-compose: Instructions to install docker-compose can be found at https://www.docker.com/docker-community
+- git: Instructions to install git can be found at https://git-scm.com/
 
 #### Deployment steps  
 
