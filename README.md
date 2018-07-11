@@ -82,8 +82,7 @@ All the logs are mounted to your host.  The logs are available under:
 To change the logs properties edit the log4j ./data/hit-base-tool/app/logs/config/app-log4j.properties 
 
 
-###  How to test with a different version of the war file 
-To use a local war file
+###  How to deploy a different version of the war file
 1) Open the ./container-config/hit-base-tool/app/Dockerfile and comment line 5 and uncomment line 6. Make sure the name of the new war file is 'hit-base-tool.war' 
 
 2) Delete the previous war file data.  All test cases will be deleted and replaced by the new data of the new war file
@@ -91,6 +90,5 @@ To use a local war file
 
 3) Deploy  
 `./container-config/deploy.sh`
-
 
 
