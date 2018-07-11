@@ -44,6 +44,9 @@ Replace 'localhost' by your hostname in ./hit-base-tool-proxy/Dockerfile
 
 
 
-
-
+### Migrating 
+1) `cd container-config`
+2) `./update-accounts.sh` 
+ 
+ 
 
