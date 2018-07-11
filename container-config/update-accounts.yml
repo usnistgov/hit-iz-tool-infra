@@ -5,9 +5,9 @@ services:
       image: update-accounts
       container_name: update-accounts
       env_file:
-          - ./erx-account-db/config.env
+          - ./hit-base-tool-account-db/config.env
       external_links:
-          - erx-account-db
+          - hit-base-tool-account-db
       healthcheck:
           test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
           timeout: 20s
