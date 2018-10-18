@@ -14,23 +14,23 @@ branch: iztool-cni
 
 ##### iztool-cni 
 1) Switch to the `iztool-cni` branch 
-`git branch iztool-cni`
+- `git branch iztool-cni`
 2) Remove old db files to ensure new resource bundle data will be loaded
-`rm -r ./data/app/db`  
+- `rm -r ./data/app/db`  
 3) Starts the containers  
-`cd container-config`
-`./deploy.sh`
+ - `cd container-config` 
+ - `./deploy.sh`
 4) Access the tool at https://localhost/
 
  
 ##### iztool 
 1) Switch to the `iztool-nist` branch 
-`git branch iztool-nist`
+- `git branch iztool-nist`
 2) Remove old db files to ensure new resource bundle data will be loaded
-`rm -r ./data/app/db`  
+- `rm -r ./data/app/db`  
 3) Starts the containers  
-`cd container-config`
-`./deploy.sh`
+ - `cd container-config` 
+ - `./deploy.sh`
 4) Access the tool at https://localhost/
 
 ##### Change certs files site
@@ -46,15 +46,15 @@ ARG serverkey=certs/my.key.pem
 
 3) Set your hostname 
 Replace 'localhost' by your hostname in ./hit-base-tool-proxy/Dockerfile
-`ARG serverhost=myhostname`
+- `ARG serverhost=myhostname`
 
 4) Access the tool at `https://myhostname/`
 
 
 
 ### Migrating 
-1) `cd container-config`
-2) `./update-accounts.sh` 
+- `cd container-config`
+- `./update-accounts.sh` 
  
  
 ###  Where to find the data ?
@@ -88,10 +88,10 @@ To change the logs properties edit the log4j ./data/hit-base-tool/app/logs/confi
 1) Open the ./container-config/hit-base-tool/app/Dockerfile and comment line 5 and uncomment line 6. Make sure the name of the new war file is 'hit-base-tool.war' 
 
 2) Delete the previous war file data.  All test cases will be deleted and replaced by the new data of the new war file
-`rm -r ./data/hit-base-tool/db/` 
+- `rm -r ./data/hit-base-tool/db/` 
 
 3) Deploy  
-`cd ./container-config`
-`./deploy.sh`
+ - `cd container-config` 
+ - `./deploy.sh`
 
 
