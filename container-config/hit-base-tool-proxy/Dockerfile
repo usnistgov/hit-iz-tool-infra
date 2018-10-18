@@ -16,13 +16,6 @@ RUN rm /var/www/html/index.nginx-debian.html && \
 COPY html/index.html /var/www/html/index.html
 COPY html/robots.txt /var/www/html/robots.txt
 
-RUN mkdir /var/www/docs/
-
-COPY docs /var/www/docs/
-
-RUN chown -R www-data:www-data /var/www/docs
-
-
 COPY config/nginx.conf /etc/nginx/nginx.conf
 # The child image will copy over the default.conf
 
