@@ -18,17 +18,19 @@ branch: iztool-cni
 2) Remove old db files to ensure new resource bundle data will be loaded
 `rm -r ./data/app/db`  
 3) Starts the containers  
-`./container-config/deploy.sh`
+`cd container-config`
+`./deploy.sh`
 4) Access the tool at https://localhost/
 
  
 ##### iztool 
-1) Switch to the `iztool` branch 
-`git branch iztool-cni`
+1) Switch to the `iztool-nist` branch 
+`git branch iztool-nist`
 2) Remove old db files to ensure new resource bundle data will be loaded
 `rm -r ./data/app/db`  
 3) Starts the containers  
-`./container-config/deploy.sh`
+`cd container-config`
+`./deploy.sh`
 4) Access the tool at https://localhost/
 
 ##### Change certs files site
@@ -89,6 +91,7 @@ To change the logs properties edit the log4j ./data/hit-base-tool/app/logs/confi
 `rm -r ./data/hit-base-tool/db/` 
 
 3) Deploy  
-`./container-config/deploy.sh`
+`cd ./container-config`
+`./deploy.sh`
 
 
