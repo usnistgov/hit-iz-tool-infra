@@ -1,7 +1,6 @@
 # Pull base image.
-FROM alpine:latest
-RUN apk update && \
-	apk add mysql mysql-client && \
+FROM alpine:3.7
+RUN apk add --no-cache mysql mysql-client bash && \
 	addgroup mysql mysql && \
 	mkdir /scripts && \
 	rm -rf /var/cache/apk/*
