@@ -14,7 +14,7 @@ branch: iztool-cni
 
 ##### iztool-cni 
 1) Switch to the `iztool-cni` branch 
-- `git branch iztool-cni`
+- `git checkout iztool-cni`
 2) Remove old db files to ensure new resource bundle data will be loaded
 - `rm -r ./data/app/db`  
 3) Starts the containers  
@@ -25,7 +25,7 @@ branch: iztool-cni
  
 ##### iztool 
 1) Switch to the `iztool-nist` branch 
-- `git branch iztool-nist`
+- `git checkout iztool-nist`
 2) Remove old db files to ensure new resource bundle data will be loaded
 - `rm -r ./data/app/db`  
 3) Starts the containers  

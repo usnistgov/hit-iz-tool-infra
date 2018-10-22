@@ -2,7 +2,7 @@
 FROM alpine:3.7
 RUN apk add --no-cache mysql mysql-client bash && \
 	addgroup mysql mysql && \
-	mkdir / scripts && \
+	mkdir /scripts && \
 	rm -rf /var/cache/apk/*
 
 COPY my.cnf /etc/mysql/my.cnf
