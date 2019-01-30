@@ -85,12 +85,11 @@ To change the logs properties edit the log4j ./data/hit-base-tool/app/logs/confi
 
 
 ###  How to deploy a different version of the war file
-1) Open the ./container-config/hit-base-tool/app/Dockerfile and comment line 5 and uncomment line 6. Make sure the name of the new war file is 'hit-base-tool.war' 
 
-2) Delete the previous war file data.  All test cases will be deleted and replaced by the new data of the new war file
+1) Delete the previous war file data.
 - `rm -r ./data/hit-base-tool/db/` 
 
-3) Deploy  
+2) Deploy  
  - `cd container-config` 
  - `./deploy.sh`
 
