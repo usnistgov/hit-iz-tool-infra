@@ -86,10 +86,13 @@ To change the logs properties edit the log4j ./data/hit-base-tool/app/logs/confi
 
 ###  How to deploy a different version of the war file
 
-1) Delete the previous war file data.
+1) Delete the previous data.
 - `rm -r ./data/hit-base-tool/db/` 
 
-2) Deploy  
+2) Remove previous images and containers 
+- `clean-all.sh` 
+
+3) Deploy  
  - `cd container-config` 
  - `./deploy.sh`
 
