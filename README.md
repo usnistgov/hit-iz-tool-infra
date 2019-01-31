@@ -90,10 +90,10 @@ To change the logs properties edit the log4j ./data/hit-base-tool/app/logs/confi
 - `rm -r ./data/hit-base-tool/db/` 
 
 2) Remove previous images and containers 
-- `clean-all.sh` 
+- `cd container-config`
+- `./clean-all.sh` 
 
 3) Deploy  
- - `cd container-config` 
- - `./deploy.sh`
+- `./deploy.sh`
 
 
