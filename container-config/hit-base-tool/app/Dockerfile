@@ -2,8 +2,8 @@
 FROM tomcat-base
 COPY ./config/context.xml /opt/tomcat/conf/
 
-RUN wget --quiet --no-cookies https://hit-2015.nist.gov/wars/iztool-cdc.war -O /opt/tomcat/webapps/hit-base-tool.war
-#COPY ./iztool.war /opt/tomcat/webapps/hit-base-tool.war
+#RUN wget --quiet --no-cookies https://hit-2015.nist.gov/wars/iztool-cdc.war -O /opt/tomcat/webapps/hit-base-tool.war
+COPY ./iztool.war /opt/tomcat/webapps/hit-base-tool.war
 #RUN mkdir /opt/data/
 #RUN chmod 766 /opt/data
 #COPY ./config/app-log4j.properties /opt/data/

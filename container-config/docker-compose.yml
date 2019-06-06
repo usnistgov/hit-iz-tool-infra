@@ -2,8 +2,8 @@ version: '2.1'
 services:
 
   hit-base-tool-account-db:
-        build: ./common/hit-base-account-db
-        image: hit-base-tool-account-db
+        #build: ./common/hit-base-account-db
+        image: desiremaria-account
         container_name: hit-base-tool-account-db
         env_file:
             - ./hit-base-tool-account-db/config.env

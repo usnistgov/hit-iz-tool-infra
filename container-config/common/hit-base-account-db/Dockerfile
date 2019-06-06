@@ -16,4 +16,4 @@ RUN chmod +x /scripts/create-db.sh
 
 EXPOSE 3306
 
-ENTRYPOINT ["/scripts/create-db.sh"]
+#ENTRYPOINT ["/scripts/create-db.sh"]

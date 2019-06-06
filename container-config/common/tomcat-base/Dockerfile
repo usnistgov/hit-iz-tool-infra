@@ -4,19 +4,19 @@ FROM ubuntu-base
 ENV TOMCAT_VERSION 8.5.28
 
 # This is in accordance to : https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-get-on-ubuntu-16-04
-#RUN apt-get update && \
-#	apt-get install -y openjdk-8-jdk && \
-#	apt-get clean && \
-#	rm -rf /var/lib/apt/lists/* && \
-#	rm -rf /var/cache/oracle-jdk8-installer;
+RUN apt-get update && \
+	apt-get install -y openjdk-8-jdk && \
+	apt-get clean && \
+	rm -rf /var/lib/apt/lists/* && \
+	rm -rf /var/cache/oracle-jdk8-installer;
 
-RUN \
-  echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | debconf-set-selections && \
-  add-apt-repository -y ppa:webupd8team/java && \
-  apt-get update && \
-  apt-get install -y oracle-java8-installer && \
-  rm -rf /var/lib/apt/lists/* && \
-  rm -rf /var/cache/oracle-jdk8-installer
+#RUN \
+#  echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | debconf-set-selections && \
+#  add-apt-repository -y ppa:webupd8team/java && \
+#  apt-get update && \
+#  apt-get install -y oracle-java8-installer && \
+#  rm -rf /var/lib/apt/lists/* && \
+#  rm -rf /var/cache/oracle-jdk8-installer
 
 
 RUN apt-get update && \
@@ -28,7 +28,8 @@ RUN apt-get update && \
 
 
 # Setup JAVA_HOME, this is useful for docker commandline
-ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
+#ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
+ENV JAVA_HOME /usr/lib/jvm/java-1.8.0-openjdk-amd64
 RUN export JAVA_HOME
 
 # Get Tomcat
