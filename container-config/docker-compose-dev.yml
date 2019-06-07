@@ -2,8 +2,8 @@ version: '2.1'
 services:
 
   hit-base-tool-db:
-      #build: ./common/hit-base-db
-      image: desiremaria-db
+      build: ./common/hit-base-db-mdb
+      image: hit-base-tool-db
       container_name: hit-base-tool-db
       env_file:
           - ./hit-base-tool/db/config.env
