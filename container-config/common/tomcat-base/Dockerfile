@@ -44,7 +44,7 @@ rm -rf /opt/tomcat/webapps/host-manager && \
 rm -rf /opt/tomcat/webapps/ROOT
 
 ENV CATALINA_HOME /opt/tomcat
-ENV JAVA_OPTS="-Xms512m -Xmx1024m"
+ENV JAVA_OPTS="-Xms1024m -Xmx2048m"
 RUN export JAVA_OPTS
 
 ENV PATH $PATH:$CATALINA_HOME/bin
